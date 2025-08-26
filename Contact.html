@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - مشكاة | Contact Us - Mishkat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#00FF00',
+                        accent: '#333333'
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="Assets/nav.css" rel="stylesheet">
+    <link href="Assets/darkTheme.css" rel="stylesheet">
+    <style>
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 255, 0, 0.1);
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation Header -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <span class="logo-text">م</span>
+                        </div>
+                        <div class="logo-text-container">
+                            <span class="logo-title" data-en="mishkat" data-ar="مشكاة">mishkat</span>
+                            <span class="logo-subtitle" data-en="Software Solutions" data-ar="حلول البرمجيات">Software Solutions</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation Menu -->
+                <div class="desktop-nav">
+                    <div class="nav-menu">
+                        <a href="index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                        <a href="about.html" class="nav-link" data-en="About Us" data-ar="من نحن">About Us</a>
+                        <a href="services.html" class="nav-link" data-en="Services" data-ar="الخدمات">Services</a>
+                        <a href="portfolio.html" class="nav-link" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+                        <a href="career.html" class="nav-link" data-en="Careers" data-ar="الوظائف">Careers</a>
+                        <a href="contact.html" class="nav-link active" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                    </div>
+                </div>
+                
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button id="langToggle" class="lang-toggle">
+                        <div class="lang-toggle-content">
+                            <i class="fas fa-globe lang-icon"></i>
+                            <span id="currentLang" data-en="عربي" data-ar="English">عربي</span>
+                        </div>
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="mobile-menu-btn">
+                    <i class="fas fa-bars mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="index.html" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="about.html" class="mobile-nav-link" data-en="About Us" data-ar="من نحن">About Us</a>
+                <a href="services.html" class="mobile-nav-link" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="portfolio.html" class="mobile-nav-link" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+                <a href="career.html" class="mobile-nav-link" data-en="Careers" data-ar="الوظائف">Careers</a>
+                <a href="contact.html" class="mobile-nav-link active" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-20 bg-gradient-to-br from-primary via-accent to-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #00FF00 0%, transparent 50%), radial-gradient(circle at 75% 75%, #00FF00 0%, transparent 50%);"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
+            <div class="text-center fade-in">
+                <h1 class="text-5xl md:text-6xl font-black mb-6 font-cairo" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h1>
+                <p class="text-xl md:text-2xl text-gray-300 font-cairo max-w-4xl mx-auto" data-en="Ready to start your next project? Get in touch with our expert team today and let's bring your vision to life" data-ar="مستعد لبدء مشروعك التالي؟ تواصل مع فريق الخبراء لدينا اليوم ودعنا نحول رؤيتك إلى واقع">Ready to start your next project? Get in touch with our expert team today and let's bring your vision to life</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Cards -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-cairo" data-en="Get In Touch" data-ar="تواصل معنا">Get In Touch</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto font-cairo leading-relaxed" data-en="We're here to help you transform your business with innovative software solutions. Reach out to us through any of the following channels." data-ar="نحن هنا لمساعدتك في تحويل عملك بحلول البرمجيات المبتكرة. تواصل معنا من خلال أي من القنوات التالية.">We're here to help you transform your business with innovative software solutions. Reach out to us through any of the following channels.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Phone -->
+                <div class="contact-card bg-white p-8 rounded-2xl text-center shadow-xl fade-in border-t-4 border-secondary">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-phone text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Phone" data-ar="الهاتف">Phone</h3>
+                    <p class="text-gray-600 mb-4 font-cairo" data-en="Call us directly for immediate assistance" data-ar="اتصل بنا مباشرة للحصول على المساعدة الفورية">Call us directly for immediate assistance</p>
+                    <div class="space-y-2">
+                        <p class="text-lg font-semibold text-primary font-cairo">+1 (555) 123-4567</p>
+                        <p class="text-lg font-semibold text-primary font-cairo">+1 (555) 123-4568</p>
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div class="contact-card bg-white p-8 rounded-2xl text-center shadow-xl fade-in border-t-4 border-primary">
+                    <div class="w-20 h-20 bg-gradient-to-br from-secondary to-primary text-black rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-envelope text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Email" data-ar="البريد الإلكتروني">Email</h3>
+                    <p class="text-gray-600 mb-4 font-cairo" data-en="Send us an email anytime" data-ar="أرسل لنا بريداً إلكترونياً في أي وقت">Send us an email anytime</p>
+                    <div class="space-y-2">
+                        <p class="text-lg font-semibold text-primary font-cairo">info@mishkat.com</p>
+                        <p class="text-lg font-semibold text-primary font-cairo">support@mishkat.com</p>
+                    </div>
+                </div>
+                
+                <!-- Address -->
+                <div class="contact-card bg-white p-8 rounded-2xl text-center shadow-xl fade-in border-t-4 border-secondary">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-map-marker-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Address" data-ar="العنوان">Address</h3>
+                    <p class="text-gray-600 mb-4 font-cairo" data-en="Visit our office" data-ar="زر مكتبنا">Visit our office</p>
+                    <p class="text-lg font-semibold text-primary font-cairo" data-en="123 Business Street, Tech City, TC 12345" data-ar="123 شارع الأعمال، مدينة التكنولوجيا، TC 12345">123 Business Street, Tech City, TC 12345</p>
+                </div>
+                
+                <!-- Working Hours -->
+                <div class="contact-card bg-white p-8 rounded-2xl text-center shadow-xl fade-in border-t-4 border-primary">
+                    <div class="w-20 h-20 bg-gradient-to-br from-secondary to-primary text-black rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-clock text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Working Hours" data-ar="ساعات العمل">Working Hours</h3>
+                    <p class="text-gray-600 mb-4 font-cairo" data-en="We're available during" data-ar="نحن متاحون خلال">We're available during</p>
+                    <div class="space-y-2">
+                        <p class="text-lg font-semibold text-primary font-cairo" data-en="Mon - Fri: 9AM - 6PM" data-ar="الاثنين - الجمعة: 9ص - 6م">Mon - Fri: 9AM - 6PM</p>
+                        <p class="text-lg font-semibold text-primary font-cairo" data-en="Sat: 9AM - 2PM" data-ar="السبت: 9ص - 2م">Sat: 9AM - 2PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <div class="bg-gradient-to-br from-gray-50 to-white p-10 rounded-2xl shadow-xl">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-8 font-cairo" data-en="Send us a Message" data-ar="أرسل لنا رسالة">Send us a Message</h3>
+                        <form class="space-y-6" id="contactForm">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-3 font-cairo" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                                    <input type="text" name="name" required class="form-input w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-cairo" placeholder="">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-3 font-cairo" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+                                    <input type="email" name="email" required class="form-input w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-cairo" placeholder="">
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-3 font-cairo" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+                                    <input type="tel" name="phone" class="form-input w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-cairo" placeholder="">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-3 font-cairo" data-en="Company" data-ar="الشركة">Company</label>
+                                    <input type="text" name="company" class="form-input w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-cairo" placeholder="">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3 font-cairo" data-en="Service Interested In" data-ar="الخدمة المهتم بها">Service Interested In</label>
+                                <select name="service" class="form-input w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-cairo">
+                                    <option value="" data-en="Select a service" data-ar="اختر خدمة">Select a service</option>
+                                    <option value="erp" data-en="ERP Systems" data-ar="أنظمة تخطيط الموارد">ERP Systems</option>
+                                    <option value="odoo" data-en="Odoo Services" data-ar="خدمات أودو">Odoo Services</option>
+                                    <option value="web" data-en="Web Development" data-ar="تطوير الويب">Web Development</option>
+                                    <option value="mobile" data-en="Mobile Apps" data-ar="تطبيقات الجوال">Mobile Apps</option>
+                                    <option value="marketing" data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</option>
+                                    <option value="cloud" data-en="Cloud Solutions" data-ar="الحلول السحابية">Cloud Solutions</option>
+                                    <option value="other" data-en="Other" data-ar="أخرى">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3 font-cairo" data-en="Project Budget" data-ar="ميزانية المشروع">Project Budget</label>
+                                <select name="budget" class="form-input w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-cairo">
+                                    <option value="" data-en="Select budget range" data-ar="اختر نطاق الميزانية">Select budget range</option>
+                                    <option value="5k-10k" data-en="$5,000 - $10,000" data-ar="5,000$ - 10,000$">$5,000 - $10,000</option>
+                                    <option value="10k-25k" data-en="$10,000 - $25,000" data-ar="10,000$ - 25,000$">$10,000 - $25,000</option>
+                                    <option value="25k-50k" data-en="$25,000 - $50,000" data-ar="25,000$ - 50,000$">$25,000 - $50,000</option>
+                                    <option value="50k+" data-en="$50,000+" data-ar="50,000$+">$50,000+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3 font-cairo" data-en="Message" data-ar="الرسالة">Message</label>
+                                <textarea rows="6" name="message" required class="form-input w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-cairo" placeholder=""></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-4 px-8 rounded-xl font-bold text-lg hover:bg-secondary hover:text-black transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 font-cairo" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Map & Additional Info -->
+                <div class="fade-in">
+                    <div class="space-y-8">
+                        <!-- Google Maps -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus"
+                                width="100%" 
+                                height="400" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Mishkat Office Location"
+                                class="w-full h-96">
+                            </iframe>
+                        </div>
+                        
+                        <!-- Quick Contact Info -->
+                        <div class="bg-gradient-to-br from-primary to-accent text-white p-8 rounded-2xl shadow-xl">
+                            <h4 class="text-2xl font-bold mb-6 font-cairo" data-en="Quick Contact" data-ar="اتصال سريع">Quick Contact</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4 rtl:mr-0 rtl:ml-4">
+                                        <i class="fas fa-phone text-black"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold font-cairo" data-en="Call Now" data-ar="اتصل الآن">Call Now</p>
+                                        <p class="text-gray-300 font-cairo">+1 (555) 123-4567</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4 rtl:mr-0 rtl:ml-4">
+                                        <i class="fas fa-envelope text-black"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold font-cairo" data-en="Email Us" data-ar="راسلنا">Email Us</p>
+                                        <p class="text-gray-300 font-cairo">info@mishkat.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4 rtl:mr-0 rtl:ml-4">
+                                        <i class="fas fa-comments text-black"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold font-cairo" data-en="Live Chat" data-ar="محادثة مباشرة">Live Chat</p>
+                                        <p class="text-gray-300 font-cairo" data-en="Available 24/7" data-ar="متاح على مدار الساعة">Available 24/7</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media -->
+                        <div class="bg-white p-8 rounded-2xl shadow-xl">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-6 font-cairo" data-en="Follow Us" data-ar="تابعنا">Follow Us</h4>
+                            <div class="flex space-x-4 rtl:space-x-reverse">
+                                <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-accent text-white rounded-2xl flex items-center justify-center hover:from-secondary hover:to-primary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-110">
+                                    <i class="fab fa-facebook text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-accent text-white rounded-2xl flex items-center justify-center hover:from-secondary hover:to-primary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-110">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-accent text-white rounded-2xl flex items-center justify-center hover:from-secondary hover:to-primary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-110">
+                                    <i class="fab fa-linkedin text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-accent text-white rounded-2xl flex items-center justify-center hover:from-secondary hover:to-primary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-110">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-accent text-white rounded-2xl flex items-center justify-center hover:from-secondary hover:to-primary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-110">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-cairo" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto font-cairo leading-relaxed" data-en="Find answers to common questions about our services and process" data-ar="اعثر على إجابات للأسئلة الشائعة حول خدماتنا وعمليتنا">Find answers to common questions about our services and process</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl shadow-lg fade-in">
+                    <button class="faq-button w-full text-left p-8 focus:outline-none" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-gray-900 font-cairo" data-en="How long does a typical project take?" data-ar="كم من الوقت يستغرق المشروع النموذجي؟">How long does a typical project take?</h3>
+                            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8">
+                        <p class="text-gray-600 font-cairo leading-relaxed" data-en="Project timelines vary depending on complexity and scope. Simple websites typically take 4-6 weeks, while complex ERP implementations can take 3-6 months. We provide detailed timelines during our initial consultation." data-ar="تختلف الجداول الزمنية للمشاريع حسب التعقيد والنطاق. المواقع البسيطة تستغرق عادة 4-6 أسابيع، بينما تنفيذ أنظمة تخطيط الموارد المعقدة يمكن أن يستغرق 3-6 أشهر. نقدم جداول زمنية مفصلة خلال استشارتنا الأولية.">Project timelines vary depending on complexity and scope. Simple websites typically take 4-6 weeks, while complex ERP implementations can take 3-6 months. We provide detailed timelines during our initial consultation.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl shadow-lg fade-in">
+                    <button class="faq-button w-full text-left p-8 focus:outline-none" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-gray-900 font-cairo" data-en="Do you provide ongoing support?" data-ar="هل تقدمون الدعم المستمر؟">Do you provide ongoing support?</h3>
+                            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8">
+                        <p class="text-gray-600 font-cairo leading-relaxed" data-en="Yes, we offer comprehensive support packages including 24/7 technical support, regular updates, maintenance, and training. Our support team is always available to help you get the most out of your software solutions." data-ar="نعم، نقدم حزم دعم شاملة تشمل الدعم الفني على مدار الساعة والتحديثات المنتظمة والصيانة والتدريب. فريق الدعم لدينا متاح دائماً لمساعدتك في الحصول على أقصى استفادة من حلول البرمجيات الخاصة بك.">Yes, we offer comprehensive support packages including 24/7 technical support, regular updates, maintenance, and training. Our support team is always available to help you get the most out of your software solutions.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl shadow-lg fade-in">
+                    <button class="faq-button w-full text-left p-8 focus:outline-none" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-gray-900 font-cairo" data-en="What makes you different from other software companies?" data-ar="ما الذي يميزكم عن شركات البرمجيات الأخرى؟">What makes you different from other software companies?</h3>
+                            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8">
+                        <p class="text-gray-600 font-cairo leading-relaxed" data-en="As an official Odoo Partner, we combine deep technical expertise with personalized service. We focus on understanding your unique business needs and delivering tailored solutions that drive real results. Our bilingual team and local presence ensure seamless communication and support." data-ar="كشريك أودو الرسمي، نجمع بين الخبرة التقنية العميقة والخدمة الشخصية. نركز على فهم احتياجات عملك الفريدة وتقديم حلول مخصصة تحقق نتائج حقيقية. فريقنا ثنائي اللغة وحضورنا المحلي يضمن التواصل والدعم السلس.">As an official Odoo Partner, we combine deep technical expertise with personalized service. We focus on understanding your unique business needs and delivering tailored solutions that drive real results. Our bilingual team and local presence ensure seamless communication and support.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl shadow-lg fade-in">
+                    <button class="faq-button w-full text-left p-8 focus:outline-none" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-gray-900 font-cairo" data-en="Can you work with our existing systems?" data-ar="هل يمكنكم العمل مع أنظمتنا الحالية؟">Can you work with our existing systems?</h3>
+                            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8">
+                        <p class="text-gray-600 font-cairo leading-relaxed" data-en="Absolutely! We specialize in system integration and can work with your existing infrastructure. Whether you need to migrate data, integrate APIs, or modernize legacy systems, our team has the expertise to ensure smooth transitions and minimal disruption to your operations." data-ar="بالطبع! نحن متخصصون في تكامل الأنظمة ويمكننا العمل مع البنية التحتية الحالية لديك. سواء كنت بحاجة إلى ترحيل البيانات أو تكامل واجهات برمجة التطبيقات أو تحديث الأنظمة القديمة، فريقنا لديه الخبرة لضمان انتقالات سلسة وأقل تعطيل لعملياتك.">Absolutely! We specialize in system integration and can work with your existing infrastructure. Whether you need to migrate data, integrate APIs, or modernize legacy systems, our team has the expertise to ensure smooth transitions and minimal disruption to your operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-primary via-accent to-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 font-cairo" data-en="Ready to Get Started?" data-ar="مستعد للبدء؟">Ready to Get Started?</h2>
+                <p class="text-xl mb-12 text-gray-300 font-cairo max-w-3xl mx-auto" data-en="Don't wait any longer. Contact us today and let's discuss how we can help transform your business with innovative software solutions." data-ar="لا تنتظر أكثر. اتصل بنا اليوم ودعنا نناقش كيف يمكننا مساعدتك في تحويل عملك بحلول البرمجيات المبتكرة.">Don't wait any longer. Contact us today and let's discuss how we can help transform your business with innovative software solutions.</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="tel:+15551234567" class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 font-cairo" data-en="Call Now" data-ar="اتصل الآن">Call Now</a>
+                    <a href="mailto:info@mishkat.com" class="border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 font-cairo" data-en="Send Email" data-ar="أرسل بريد إلكتروني">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 to-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <a href="index.html">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse mb-6" style="    background: #80808030;
+    border-radius: 20px;">
+                            <!-- <img src="mishkat.png" alt="لوجو مشكاة" class="w-10 h-10 rounded filter invert" />
+                             -->
+                            <p style="font-size: 24px; margin: 7px;  border-radius: 20%; background-color: #00FF00; color: black; font-weight: 700; width: 55px; text-align: center; padding: 10px;">م</p>
+                            <div>
+                                <h1 class="text-lg font-bold text-white font-cairo">mishkat</h1>
+                                <h2 class="text-sm text-gray-400 font-cairo">مِشْكَاة</h2>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 font-cairo text-lg leading-relaxed" data-en="Your trusted partner for innovative software solutions and digital transformation." data-ar="شريكك الموثوق في حلول البرمجيات المبتكرة والتحول الرقمي.">Your trusted partner for innovative software solutions and digital transformation.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-cairo" data-en="Services" data-ar="الخدمات">Services</h3>
+                    <ul class="space-y-3 text-gray-400 font-cairo">
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="ERP Systems" data-ar="أنظمة تخطيط الموارد">ERP Systems</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Odoo Services" data-ar="خدمات أودو">Odoo Services</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Web Development" data-ar="تطوير الويب">Web Development</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Mobile Apps" data-ar="تطبيقات الجوال">Mobile Apps</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Cloud Solutions" data-ar="الحلول السحابية">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-cairo" data-en="Company" data-ar="الشركة">Company</h3>
+                    <ul class="space-y-3 text-gray-400 font-cairo">
+                        <li><a href="about.html" class="hover:text-white transition-colors text-lg" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-colors text-lg" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors text-lg" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                        <li><a href="career.html" class="hover:text-white transition-colors text-lg" data-en="Careers" data-ar="الوظائف">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-cairo" data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h3>
+                    <div class="space-y-3 text-gray-400 font-cairo">
+                        <p class="text-lg">+1 (555) 123-4567</p>
+                        <p class="text-lg">info@mishkat.com</p>
+                        <p class="text-lg" data-en="123 Business Street, Tech City" data-ar="123 شارع الأعمال، مدينة التكنولوجيا">123 Business Street, Tech City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p class="text-lg font-cairo" data-en="© 2024 Mishkat. All rights reserved." data-ar="© 2024 مشكاة. جميع الحقوق محفوظة.">© 2024 Mishkat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="Assets/language.js"></script>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أعمالنا - مشكاة | Portfolio - Mishkat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#00FF00',
+                        accent: '#333333'
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="Assets/nav.css" rel="stylesheet">
+    <link href="Assets/darkTheme.css" rel="stylesheet">
+    <style>
+        .portfolio-filter {
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-filter.active {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 255, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation Header -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <span class="logo-text">م</span>
+                        </div>
+                        <div class="logo-text-container">
+                            <span class="logo-title" data-en="mishkat" data-ar="مشكاة">mishkat</span>
+                            <span class="logo-subtitle" data-en="Software Solutions" data-ar="حلول البرمجيات">Software Solutions</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation Menu -->
+                <div class="desktop-nav">
+                    <div class="nav-menu">
+                        <a href="index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                        <a href="about.html" class="nav-link" data-en="About Us" data-ar="من نحن">About Us</a>
+                        <a href="services.html" class="nav-link" data-en="Services" data-ar="الخدمات">Services</a>
+                        <a href="portfolio.html" class="nav-link active" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+                        <a href="career.html" class="nav-link" data-en="Careers" data-ar="الوظائف">Careers</a>
+                        <a href="contact.html" class="nav-link" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                    </div>
+                </div>
+                
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button id="langToggle" class="lang-toggle">
+                        <div class="lang-toggle-content">
+                            <i class="fas fa-globe lang-icon"></i>
+                            <span id="currentLang" data-en="عربي" data-ar="English">عربي</span>
+                        </div>
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="mobile-menu-btn">
+                    <i class="fas fa-bars mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="index.html" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="about.html" class="mobile-nav-link" data-en="About Us" data-ar="من نحن">About Us</a>
+                <a href="services.html" class="mobile-nav-link" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="portfolio.html" class="mobile-nav-link active" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+                <a href="career.html" class="mobile-nav-link" data-en="Careers" data-ar="الوظائف">Careers</a>
+                <a href="contact.html" class="mobile-nav-link" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-20 bg-gradient-to-br from-primary via-accent to-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #00FF00 0%, transparent 50%), radial-gradient(circle at 75% 75%, #00FF00 0%, transparent 50%);"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
+            <div class="text-center fade-in">
+                <h1 class="text-5xl md:text-6xl font-black mb-6 font-cairo" data-en="Our Portfolio" data-ar="أعمالنا">Our Portfolio</h1>
+                <p class="text-xl md:text-2xl text-gray-300 font-cairo max-w-4xl mx-auto" data-en="Explore our successful projects and innovative solutions that have transformed businesses worldwide" data-ar="استكشف مشاريعنا الناجحة والحلول المبتكرة التي حولت الأعمال حول العالم">Explore our successful projects and innovative solutions that have transformed businesses worldwide</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="portfolio-filter active px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all font-cairo font-semibold" data-filter="all" data-en="All Projects" data-ar="جميع المشاريع">All Projects</button>
+                    <button class="portfolio-filter px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all font-cairo font-semibold" data-filter="erp" data-en="ERP Systems" data-ar="أنظمة تخطيط الموارد">ERP Systems</button>
+                    <button class="portfolio-filter px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all font-cairo font-semibold" data-filter="web" data-en="Web Development" data-ar="تطوير الويب">Web Development</button>
+                    <button class="portfolio-filter px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all font-cairo font-semibold" data-filter="mobile" data-en="Mobile Apps" data-ar="تطبيقات الجوال">Mobile Apps</button>
+                    <button class="portfolio-filter px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all font-cairo font-semibold" data-filter="marketing" data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</button>
+                    <button class="portfolio-filter px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all font-cairo font-semibold" data-filter="cloud" data-en="Cloud Solutions" data-ar="الحلول السحابية">Cloud Solutions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10" id="portfolioGrid">
+                <!-- ERP Project 1 -->
+                <div class="portfolio-item bg-white rounded-2xl shadow-xl overflow-hidden fade-in group" data-category="erp">
+                    <div class="relative overflow-hidden">
+                        <img src="Assets/tech images/erp-system.webp" alt="Manufacturing ERP" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="ERP" data-ar="تخطيط الموارد">ERP</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <i class="fas fa-external-link-alt text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Manufacturing ERP System" data-ar="نظام تخطيط موارد التصنيع">Manufacturing ERP System</h3>
+                        <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Complete ERP solution for a manufacturing company with 500+ employees, including advanced inventory management, production planning, and comprehensive financial reporting." data-ar="حل تخطيط موارد شامل لشركة تصنيع تضم أكثر من 500 موظف، يشمل إدارة المخزون المتقدمة وتخطيط الإنتاج والتقارير المالية الشاملة.">Complete ERP solution for a manufacturing company with 500+ employees, including advanced inventory management, production planning, and comprehensive financial reporting.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-bold text-lg font-cairo" data-en="2024" data-ar="2024">2024</span>
+                            <button class="text-primary hover:text-secondary font-semibold font-cairo transition-colors flex items-center" data-en="View Details" data-ar="عرض التفاصيل">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2 rtl:ml-0 rtl:mr-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Project 1 -->
+                <div class="portfolio-item bg-white rounded-2xl shadow-xl overflow-hidden fade-in group" data-category="web">
+                    <div class="relative overflow-hidden">
+                        <img src="Assets/tech images/platform-ecommerce-uk.webp" alt="E-commerce Platform" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-primary text-white px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Web Development" data-ar="تطوير الويب">Web Development</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <i class="fas fa-external-link-alt text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="E-commerce Platform" data-ar="منصة التجارة الإلكترونية">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Modern e-commerce website with integrated payment systems, advanced inventory management, and multi-language support serving 10,000+ customers worldwide." data-ar="موقع تجارة إلكترونية حديث مع أنظمة دفع متكاملة وإدارة المخزون المتقدمة ودعم متعدد اللغات يخدم أكثر من 10,000 عميل حول العالم.">Modern e-commerce website with integrated payment systems, advanced inventory management, and multi-language support serving 10,000+ customers worldwide.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-bold text-lg font-cairo" data-en="2023" data-ar="2023">2023</span>
+                            <button class="text-primary hover:text-secondary font-semibold font-cairo transition-colors flex items-center" data-en="View Details" data-ar="عرض التفاصيل">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2 rtl:ml-0 rtl:mr-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Project 1 -->
+                <div class="portfolio-item bg-white rounded-2xl shadow-xl overflow-hidden fade-in group" data-category="mobile">
+                    <div class="relative overflow-hidden">
+                        <img src="Assets/tech images/1.-Featured-Image-4.webp" alt="Food Delivery App" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Mobile App" data-ar="تطبيق الجوال">Mobile App</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <i class="fas fa-external-link-alt text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- info  -->
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Food Delivery Mobile App" data-ar="تطبيق توصيل الطعام">Food Delivery Mobile App</h3>
+                        <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Cross-platform mobile application for food delivery with real-time tracking, multiple payment options, customer rating system, and AI-powered recommendations." data-ar="تطبيق جوال متعدد المنصات لتوصيل الطعام مع التتبع في الوقت الفعلي وخيارات دفع متعددة ونظام تقييم العملاء والتوصيات المدعومة بالذكاء الاصطناعي.">Cross-platform mobile application for food delivery with real-time tracking, multiple payment options, customer rating system, and AI-powered recommendations.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-bold text-lg font-cairo" data-en="2024" data-ar="2024">2024</span>
+                            <button class="text-primary hover:text-secondary font-semibold font-cairo transition-colors flex items-center" data-en="View Details" data-ar="عرض التفاصيل">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2 rtl:ml-0 rtl:mr-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ERP Project 2 -->
+                <div class="portfolio-item bg-white rounded-2xl shadow-xl overflow-hidden fade-in group" data-category="erp">
+                    <div class="relative overflow-hidden">
+                        <img src="Assets/tech images/Hospital.webp" alt="Healthcare ERP" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="ERP" data-ar="تخطيط الموارد">ERP</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <i class="fas fa-external-link-alt text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Healthcare Management System" data-ar="نظام إدارة الرعاية الصحية">Healthcare Management System</h3>
+                        <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Comprehensive healthcare ERP system for a hospital chain with patient management, appointment scheduling, billing integration, and electronic health records." data-ar="نظام تخطيط موارد شامل للرعاية الصحية لسلسلة مستشفيات مع إدارة المرضى وجدولة المواعيد وتكامل الفواتير والسجلات الصحية الإلكترونية.">Comprehensive healthcare ERP system for a hospital chain with patient management, appointment scheduling, billing integration, and electronic health records.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-bold text-lg font-cairo" data-en="2023" data-ar="2023">2023</span>
+                            <button class="text-primary hover:text-secondary font-semibold font-cairo transition-colors flex items-center" data-en="View Details" data-ar="عرض التفاصيل">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2 rtl:ml-0 rtl:mr-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Project 2 -->
+                <div class="portfolio-item bg-white rounded-2xl shadow-xl overflow-hidden fade-in group" data-category="web">
+                    <div class="relative overflow-hidden">
+                        <img src="Assets/tech images/website-two.webp" alt="Corporate Website" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-primary text-white px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Web Development" data-ar="تطوير الويب">Web Development</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <i class="fas fa-external-link-alt text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- information about -->
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Corporate Website & Portal" data-ar="موقع الشركة والبوابة">Corporate Website & Portal</h3>
+                        <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Professional corporate website with employee portal, document management system, client area, and integrated CRM for a leading consulting firm." data-ar="موقع شركة مهني مع بوابة الموظفين ونظام إدارة الوثائق ومنطقة العملاء ونظام إدارة علاقات العملاء المتكامل لشركة استشارية رائدة.">Professional corporate website with employee portal, document management system, client area, and integrated CRM for a leading consulting firm.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-bold text-lg font-cairo" data-en="2024" data-ar="2024">2024</span>
+                            <button class="text-primary hover:text-secondary font-semibold font-cairo transition-colors flex items-center" data-en="View Details" data-ar="عرض التفاصيل">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2 rtl:ml-0 rtl:mr-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Project 2 -->
+                <div class="portfolio-item bg-white rounded-2xl shadow-xl overflow-hidden fade-in group" data-category="mobile">
+                    <div class="relative overflow-hidden">
+                        <img src="Assets/tech images/Banking.jpg" alt="Banking App" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Mobile App" data-ar="تطبيق الجوال">Mobile App</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <i class="fas fa-external-link-alt text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Mobile Banking Application" data-ar="تطبيق الخدمات المصرفية">Mobile Banking Application</h3>
+                        <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Secure mobile banking app with biometric authentication, money transfers, bill payments, investment tracking, and advanced security features." data-ar="تطبيق خدمات مصرفية آمن مع المصادقة البيومترية وتحويل الأموال ودفع الفواتير وتتبع الاستثمار وميزات الأمان المتقدمة.">Secure mobile banking app with biometric authentication, money transfers, bill payments, investment tracking, and advanced security features.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-bold text-lg font-cairo" data-en="2023" data-ar="2023">2023</span>
+                            <button class="text-primary hover:text-secondary font-semibold font-cairo transition-colors flex items-center" data-en="View Details" data-ar="عرض التفاصيل">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2 rtl:ml-0 rtl:mr-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Project 1 -->
+                <div class="portfolio-item bg-white rounded-2xl shadow-xl overflow-hidden fade-in group" data-category="marketing">
+                    <div class="relative overflow-hidden">
+                        <img src="Assets/tech images/Marketing-two.webp" alt="Digital Marketing Campaign" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-primary text-white px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <i class="fas fa-external-link-alt text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- information -->
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Retail Brand Digital Campaign" data-ar="حملة رقمية لعلامة تجارية">Retail Brand Digital Campaign</h3>
+                        <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Comprehensive digital marketing campaign for a retail brand including social media strategy, Google Ads management, content creation, and influencer partnerships resulting in 300% increase in online sales." data-ar="حملة تسويق رقمي شاملة لعلامة تجارية للبيع بالتجزئة تشمل استراتيجية وسائل التواصل الاجتماعي وإدارة إعلانات جوجل وإنشاء المحتوى والشراكات مع المؤثرين مما أدى إلى زيادة 300% في المبيعات الإلكترونية.">Comprehensive digital marketing campaign for a retail brand including social media strategy, Google Ads management, content creation, and influencer partnerships resulting in 300% increase in online sales.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-bold text-lg font-cairo" data-en="2024" data-ar="2024">2024</span>
+                            <button class="text-primary hover:text-secondary font-semibold font-cairo transition-colors flex items-center" data-en="View Details" data-ar="عرض التفاصيل">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2 rtl:ml-0 rtl:mr-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Project 1 -->
+                <div class="portfolio-item bg-white rounded-2xl shadow-xl overflow-hidden fade-in group" data-category="cloud">
+                    <div class="relative overflow-hidden">
+                        <img src="Assets/tech images/Cloud-two.jpg" alt="Cloud Migration" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Cloud Solutions" data-ar="الحلول السحابية">Cloud Solutions</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <i class="fas fa-external-link-alt text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Enterprise Cloud Migration" data-ar="الانتقال السحابي للمؤسسات">Enterprise Cloud Migration</h3>
+                        <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Complete cloud migration project for a multinational corporation, moving 200+ applications to AWS cloud infrastructure with zero downtime, enhanced security, and 40% cost reduction." data-ar="مشروع انتقال سحابي كامل لشركة متعددة الجنسيات، نقل أكثر من 200 تطبيق إلى البنية التحتية السحابية AWS بدون توقف، مع تعزيز الأمان وتقليل التكاليف بنسبة 40%.">Complete cloud migration project for a multinational corporation, moving 200+ applications to AWS cloud infrastructure with zero downtime, enhanced security, and 40% cost reduction.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-bold text-lg font-cairo" data-en="2023" data-ar="2023">2023</span>
+                            <button class="text-primary hover:text-secondary font-semibold font-cairo transition-colors flex items-center" data-en="View Details" data-ar="عرض التفاصيل">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2 rtl:ml-0 rtl:mr-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-cairo" data-en="What Our Clients Say" data-ar="ماذا يقول عملاؤنا">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto font-cairo leading-relaxed" data-en="Hear from our satisfied clients about their transformative experiences with Mishkat" data-ar="استمع من عملائنا الراضين عن تجاربهم التحويلية مع مشكاة">Hear from our satisfied clients about their transformative experiences with Mishkat</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+
+                <div class="bg-white p-8 rounded-2xl shadow-xl fade-in border-l-4 border-secondary">
+                    <div class="flex items-center mb-6">
+                        <img src="Assets/tech images/male-ai.webp" alt="Client" class="w-16 h-16 rounded-full mr-4 rtl:mr-0 rtl:ml-4 border-2 border-secondary">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg font-cairo" data-en="Ahmed Al-Mansouri" data-ar="أحمد المنصوري">Ahmed Al-Mansouri</h4>
+                            <p class="text-sm text-gray-600 font-cairo" data-en="CEO, Manufacturing Co." data-ar="الرئيس التنفيذي، شركة التصنيع">CEO, Manufacturing Co.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 font-cairo leading-relaxed text-lg" data-en="Mishkat transformed our business operations completely. The ERP system they implemented increased our efficiency by 40% and reduced operational costs significantly. Their team's expertise and dedication are unmatched." data-ar="مشكاة حولت عمليات أعمالنا بالكامل. نظام تخطيط الموارد الذي نفذوه زاد كفاءتنا بنسبة 40% وقلل التكاليف التشغيلية بشكل كبير. خبرة فريقهم وتفانيهم لا مثيل لهما.">"Mishkat transformed our business operations completely. The ERP system they implemented increased our efficiency by 40% and reduced operational costs significantly. Their team's expertise and dedication are unmatched."</p>
+                    <div class="flex text-secondary mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-xl fade-in border-l-4 border-primary">
+                    <div class="flex items-center mb-6">
+                        <img src="Assets/tech images/girl.webp" alt="Client" class="w-16 h-16 rounded-full mr-4 rtl:mr-0 rtl:ml-4 border-2 border-primary">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg font-cairo" data-en="Sarah Johnson" data-ar="سارة جونسون">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-600 font-cairo" data-en="Director, E-commerce Store" data-ar="مديرة، متجر إلكتروني">Director, E-commerce Store</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 font-cairo leading-relaxed text-lg" data-en="The e-commerce platform Mishkat built for us exceeded all expectations. Our online sales increased by 200% within the first six months of launch. The platform is user-friendly and highly scalable." data-ar="منصة التجارة الإلكترونية التي بنتها مشكاة لنا تجاوزت كل التوقعات. زادت مبيعاتنا الإلكترونية بنسبة 200% خلال الأشهر الستة الأولى من الإطلاق. المنصة سهلة الاستخدام وقابلة للتوسع بشكل كبير.">"The e-commerce platform Mishkat built for us exceeded all expectations. Our online sales increased by 200% within the first six months of launch. The platform is user-friendly and highly scalable."</p>
+                    <div class="flex text-secondary mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-xl fade-in border-l-4 border-secondary">
+                    <div class="flex items-center mb-6">
+                        <img src="Assets/tech images/male-one.webp" alt="Client" class="w-16 h-16 rounded-full mr-4 rtl:mr-0 rtl:ml-4 border-2 border-secondary">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg font-cairo" data-en="Mohammed Hassan" data-ar="محمد حسن">Mohammed Hassan</h4>
+                            <p class="text-sm text-gray-600 font-cairo" data-en="CTO, Tech Startup" data-ar="مدير التكنولوجيا، شركة ناشئة">CTO, Tech Startup</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 font-cairo leading-relaxed text-lg" data-en="Working with Mishkat was a game-changer for our startup. Their mobile app development expertise helped us launch our product successfully and scale rapidly. The app performance is exceptional." data-ar="العمل مع مشكاة كان نقطة تحول لشركتنا الناشئة. خبرتهم في تطوير تطبيقات الجوال ساعدتنا في إطلاق منتجنا بنجاح والتوسع بسرعة. أداء التطبيق استثنائي.">"Working with Mishkat was a game-changer for our startup. Their mobile app development expertise helped us launch our product successfully and scale rapidly. The app performance is exceptional."</p>
+                    <div class="flex text-secondary mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-primary via-accent to-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 font-cairo" data-en="Ready to Start Your Project?" data-ar="مستعد لبدء مشروعك؟">Ready to Start Your Project?</h2>
+                <p class="text-xl mb-12 text-gray-300 font-cairo max-w-3xl mx-auto" data-en="Join our portfolio of successful clients and transform your business with our innovative solutions" data-ar="انضم إلى محفظة عملائنا الناجحين وحوّل عملك بحلولنا المبتكرة">Join our portfolio of successful clients and transform your business with our innovative solutions</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="contact.html" class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 font-cairo" data-en="Start Your Project" data-ar="ابدأ مشروعك">Start Your Project</a>
+                    <a href="services.html" class="border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 font-cairo" data-en="View Services" data-ar="عرض الخدمات">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 to-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <!-- information -->
+                <div>
+                    <a href="index.html">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse mb-6" style="    background: #80808030;
+    border-radius: 20px;">
+                            <!-- <img src="mishkat.png" alt="لوجو مشكاة" class="w-10 h-10 rounded filter invert" />
+                             -->
+                            <p style="font-size: 24px; margin: 7px;  border-radius: 20%; background-color: #00FF00; color: black; font-weight: 700; width: 55px; text-align: center; padding: 10px;">م</p>
+                            <div>
+                                <h1 class="text-lg font-bold text-white font-cairo">mishkat</h1>
+                                <h2 class="text-sm text-gray-400 font-cairo">مِشْكَاة</h2>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 font-cairo text-lg leading-relaxed" data-en="Your trusted partner for innovative software solutions and digital transformation." data-ar="شريكك الموثوق في حلول البرمجيات المبتكرة والتحول الرقمي.">Your trusted partner for innovative software solutions and digital transformation.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-cairo" data-en="Services" data-ar="الخدمات">Services</h3>
+                    <ul class="space-y-3 text-gray-400 font-cairo">
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="ERP Systems" data-ar="أنظمة تخطيط الموارد">ERP Systems</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Odoo Services" data-ar="خدمات أودو">Odoo Services</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Web Development" data-ar="تطوير الويب">Web Development</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Mobile Apps" data-ar="تطبيقات الجوال">Mobile Apps</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Cloud Solutions" data-ar="الحلول السحابية">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-cairo" data-en="Company" data-ar="الشركة">Company</h3>
+                    <ul class="space-y-3 text-gray-400 font-cairo">
+                        <li><a href="about.html" class="hover:text-white transition-colors text-lg" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-colors text-lg" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors text-lg" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                        <li><a href="careers.html" class="hover:text-white transition-colors text-lg" data-en="Careers" data-ar="الوظائف">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-cairo" data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h3>
+                    <div class="space-y-3 text-gray-400 font-cairo">
+                        <p class="text-lg">+1 (555) 123-4567</p>
+                        <p class="text-lg">info@mishkat.com</p>
+                        <p class="text-lg" data-en="123 Business Street, Tech City" data-ar="123 شارع الأعمال، مدينة التكنولوجيا">123 Business Street, Tech City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p class="text-lg font-cairo" data-en="© 2024 Mishkat. All rights reserved." data-ar="© 2024 مشكاة. جميع الحقوق محفوظة.">© 2024 Mishkat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="Assets/language.js"></script>
+</body>
+</html>

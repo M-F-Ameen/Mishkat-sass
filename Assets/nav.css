@@ -1,0 +1,297 @@
+/* Navigation Styles for Mishkat Website */
+
+/* RTL/LTR Direction Styles */
+[dir="rtl"] {
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+}
+
+[dir="ltr"] {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Language Switch Button */
+.lang-switch {
+    transition: all 0.3s ease;
+}
+
+.lang-switch:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation Link Active State */
+.nav-link.active {
+    background: white;
+    box-shadow: 0px 0px 5px #0000000d;
+}
+
+/* Fade In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navigation Container */
+.nav-container {
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.nav-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .nav-inner {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-inner {
+        padding: 0 2rem;
+    }
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+[dir="rtl"] .logo-icon {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+.logo-text {
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: 'Cairo', sans-serif;
+}
+
+.logo-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+    font-family: 'Cairo', sans-serif;
+}
+
+.logo-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Desktop Navigation Menu */
+.desktop-nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: block;
+    }
+}
+
+.nav-menu {
+    margin-left: 2.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    font-family: 'Cairo', sans-serif;
+}
+
+[dir="rtl"] .nav-menu {
+    margin-left: 0;
+    margin-right: 2.5rem;
+    flex-direction: row-reverse;
+}
+
+.nav-link {
+    color: #374151;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #000000;
+    background-color: #f9fafb;
+}
+
+.nav-link.active {
+    color: #000000;
+    background: white;
+    box-shadow: 0px 0px 5px #0000000d;
+}
+
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+[dir="rtl"] .lang-switcher {
+    flex-direction: row-reverse;
+}
+
+.lang-toggle {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+    background: linear-gradient(135deg, #00FF00 0%, #000000 100%);
+    color: #000000;
+    transform: scale(1.05);
+}
+
+.lang-toggle-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+[dir="rtl"] .lang-toggle-content {
+    flex-direction: row-reverse;
+}
+
+.lang-icon {
+    font-size: 0.875rem;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: block;
+    color: #374151;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: #000000;
+    background-color: #f9fafb;
+}
+
+.mobile-menu-icon {
+    font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Mobile Navigation Menu */
+.mobile-nav {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+    .mobile-nav {
+        display: none !important;
+    }
+}
+
+.mobile-nav.show {
+    display: block;
+}
+
+.mobile-nav-content {
+    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: 'Cairo', sans-serif;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #374151;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: #000000;
+    background-color: #f9fafb;
+}
+
+.mobile-nav-link.active {
+    color: #000000;
+    background-color: #f9fafb;
+    font-weight: 600;
+} 

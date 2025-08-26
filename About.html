@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - مشكاة | About Us - Mishkat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#00FF00',
+                        accent: '#333333'
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="Assets/nav.css" rel="stylesheet">
+    <link href="Assets/darkTheme.css" rel="stylesheet">
+    <style>
+        .team-card {
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card {
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 255, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation Header -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <span class="logo-text">م</span>
+                        </div>
+                        <div class="logo-text-container">
+                            <span class="logo-title" data-en="mishkat" data-ar="مشكاة">mishkat</span>
+                            <span class="logo-subtitle" data-en="Software Solutions" data-ar="حلول البرمجيات">Software Solutions</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation Menu -->
+                <div class="desktop-nav">
+                    <div class="nav-menu">
+                        <a href="index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                        <a href="about.html" class="nav-link active" data-en="About Us" data-ar="من نحن">About Us</a>
+                        <a href="services.html" class="nav-link" data-en="Services" data-ar="الخدمات">Services</a>
+                        <a href="portfolio.html" class="nav-link" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+                        <a href="career.html" class="nav-link" data-en="Careers" data-ar="الوظائف">Careers</a>
+                        <a href="contact.html" class="nav-link" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                    </div>
+                </div>
+                
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button id="langToggle" class="lang-toggle">
+                        <div class="lang-toggle-content">
+                            <i class="fas fa-globe lang-icon"></i>
+                            <span id="currentLang" data-en="عربي" data-ar="English">عربي</span>
+                        </div>
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="mobile-menu-btn">
+                    <i class="fas fa-bars mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="index.html" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="about.html" class="mobile-nav-link active" data-en="About Us" data-ar="من نحن">About Us</a>
+                <a href="services.html" class="mobile-nav-link" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="portfolio.html" class="mobile-nav-link" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+                <a href="career.html" class="mobile-nav-link" data-en="Careers" data-ar="الوظائف">Careers</a>
+                <a href="contact.html" class="mobile-nav-link" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-20 bg-gradient-to-br from-primary via-accent to-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #00FF00 0%, transparent 50%), radial-gradient(circle at 75% 75%, #00FF00 0%, transparent 50%);"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
+            <div class="text-center fade-in">
+                <h1 class="text-5xl md:text-6xl font-black mb-6 font-cairo" data-en="About Mishkat" data-ar="عن مشكاة">About Mishkat</h1>
+                <p class="text-xl md:text-2xl text-gray-300 font-cairo max-w-3xl mx-auto" data-en="Learn more about our company, mission, and the passionate team behind our success" data-ar="تعرف أكثر على شركتنا ومهمتنا والفريق المتحمس وراء نجاحنا">Learn more about our company, mission, and the passionate team behind our success</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-8 font-cairo" data-en="Our Story" data-ar="قصتنا">Our Story</h2>
+                    <p class="text-gray-600 mb-6 font-cairo text-lg leading-relaxed" data-en="Founded in 2015, Mishkat has been at the forefront of digital transformation, helping businesses across various industries streamline their operations and achieve their goals through innovative software solutions." data-ar="تأسست مشكاة في عام 2015، وكانت في المقدمة في التحول الرقمي، مساعدة الشركات عبر مختلف الصناعات لتبسيط عملياتها وتحقيق أهدافها من خلال حلول البرمجيات المبتكرة.">Founded in 2015, Mishkat has been at the forefront of digital transformation, helping businesses across various industries streamline their operations and achieve their goals through innovative software solutions.</p>
+                    <p class="text-gray-600 mb-8 font-cairo text-lg leading-relaxed" data-en="Our journey began with a simple vision: to bridge the gap between complex business requirements and user-friendly technology solutions. Today, we're proud to be an official Odoo Partner, serving clients worldwide with comprehensive ERP systems, custom web applications, and mobile solutions." data-ar="بدأت رحلتنا برؤية بسيطة: سد الفجوة بين متطلبات الأعمال المعقدة وحلول التكنولوجيا سهلة الاستخدام. اليوم، نحن فخورون بكوننا شريك أودو الرسمي، نخدم العملاء في جميع أنحاء العالم بأنظمة تخطيط الموارد الشاملة وتطبيقات الويب المخصصة وحلول الجوال.">Our journey began with a simple vision: to bridge the gap between complex business requirements and user-friendly technology solutions. Today, we're proud to be an official Odoo Partner, serving clients worldwide with comprehensive ERP systems, custom web applications, and mobile solutions.</p>
+                    
+                    <!-- Timeline -->
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-secondary rounded-full mr-4 rtl:mr-0 rtl:ml-4"></div>
+                            <div>
+                                <span class="font-bold text-primary font-cairo">2015:</span>
+                                <span class="text-gray-600 font-cairo" data-en="Company founded" data-ar="تأسيس الشركة">Company founded</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-secondary rounded-full mr-4 rtl:mr-0 rtl:ml-4"></div>
+                            <div>
+                                <span class="font-bold text-primary font-cairo">2018:</span>
+                                <span class="text-gray-600 font-cairo" data-en="Became Official Odoo Partner" data-ar="أصبحنا شريك أودو الرسمي">Became Official Odoo Partner</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-secondary rounded-full mr-4 rtl:mr-0 rtl:ml-4"></div>
+                            <div>
+                                <span class="font-bold text-primary font-cairo">2024:</span>
+                                <span class="text-gray-600 font-cairo" data-en="500+ Projects Completed" data-ar="أكثر من 500 مشروع مكتمل">500+ Projects Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="relative">
+                        <img src="Assets/tech images/twilve.webp" alt="Our Story" class="rounded-2xl shadow-2xl">
+                        <div class="absolute -bottom-3 -right-3 md:-bottom-6 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-secondary rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-history text-xl md:text-3xl text-black"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="fade-in">
+                    <div class="bg-white p-10 rounded-2xl shadow-xl border-l-4 border-secondary">
+                        <div class="text-primary text-5xl mb-6">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 font-cairo" data-en="Our Mission" data-ar="مهمتنا">Our Mission</h3>
+                        <p class="text-gray-600 font-cairo text-lg leading-relaxed" data-en="To empower businesses with innovative software solutions that drive growth, efficiency, and digital transformation. We strive to deliver excellence through cutting-edge technology, personalized service, and continuous innovation." data-ar="تمكين الشركات من خلال حلول البرمجيات المبتكرة التي تدفع النمو والكفاءة والتحول الرقمي. نسعى لتقديم التميز من خلال التكنولوجيا المتطورة والخدمة الشخصية والابتكار المستمر.">To empower businesses with innovative software solutions that drive growth, efficiency, and digital transformation. We strive to deliver excellence through cutting-edge technology, personalized service, and continuous innovation.</p>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-white p-10 rounded-2xl shadow-xl border-l-4 border-primary">
+                        <div class="text-secondary text-5xl mb-6">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 font-cairo" data-en="Our Vision" data-ar="رؤيتنا">Our Vision</h3>
+                        <p class="text-gray-600 font-cairo text-lg leading-relaxed" data-en="To become the leading software solutions provider in the region, recognized for our expertise, reliability, and commitment to client success. We envision a future where every business can harness the power of technology to achieve their full potential." data-ar="أن نصبح مزود حلول البرمجيات الرائد في المنطقة، معترف بخبرتنا وموثوقيتنا والتزامنا بنجاح العملاء. نتصور مستقبلاً حيث يمكن لكل شركة استغلال قوة التكنولوجيا لتحقيق إمكاناتها الكاملة.">To become the leading software solutions provider in the region, recognized for our expertise, reliability, and commitment to client success. We envision a future where every business can harness the power of technology to achieve their full potential.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-cairo" data-en="Our Team" data-ar="فريقنا">Our Team</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto font-cairo leading-relaxed" data-en="Meet the talented professionals behind Mishkat's success and innovation" data-ar="تعرف على المحترفين الموهوبين وراء نجاح وابتكار مشكاة">Meet the talented professionals behind Mishkat's success and innovation</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl text-center shadow-xl fade-in">
+                    <div class="relative mb-6">
+                        <img src="Assets/tech images/male-one.webp" alt="CEO" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary">
+                        <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                            <i class="fas fa-crown text-black text-sm"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2 font-cairo" data-en="Ahmed Al-Rashid" data-ar="أحمد الراشد">Ahmed Al-Rashid</h3>
+                    <p class="text-primary font-semibold mb-4 font-cairo" data-en="CEO & Founder" data-ar="الرئيس التنفيذي والمؤسس">CEO & Founder</p>
+                    <p class="text-gray-600 text-sm font-cairo leading-relaxed" data-en="15+ years of experience in software development and business strategy. Passionate about digital transformation and innovation." data-ar="أكثر من 15 عاماً من الخبرة في تطوير البرمجيات واستراتيجية الأعمال. متحمس للتحول الرقمي والابتكار.">15+ years of experience in software development and business strategy. Passionate about digital transformation and innovation.</p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-card bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl text-center shadow-xl fade-in">
+                    <div class="relative mb-6">
+                        <img src="Assets/tech images/girl.webp" alt="CTO" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary">
+                        <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                            <i class="fas fa-code text-black text-sm"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2 font-cairo" data-en="Sarah Johnson" data-ar="سارة جونسون">Sarah Johnson</h3>
+                    <p class="text-primary font-semibold mb-4 font-cairo" data-en="Chief Technology Officer" data-ar="مدير التكنولوجيا">Chief Technology Officer</p>
+                    <p class="text-gray-600 text-sm font-cairo leading-relaxed" data-en="Expert in ERP systems and Odoo implementation with 12+ years experience. Leads our technical innovation initiatives." data-ar="خبيرة في أنظمة تخطيط الموارد وتنفيذ أودو مع أكثر من 12 عاماً من الخبرة. تقود مبادرات الابتكار التقني لدينا.">Expert in ERP systems and Odoo implementation with 12+ years experience. Leads our technical innovation initiatives.</p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-card bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl text-center shadow-xl fade-in">
+                    <div class="relative mb-6">
+                        <img src="Assets/tech images/male-ai.webp" alt="Project Manager" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary">
+                        <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                            <i class="fas fa-tasks text-black text-sm"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2 font-cairo" data-en="Omar Hassan" data-ar="عمر حسن">Omar Hassan</h3>
+                    <p class="text-primary font-semibold mb-4 font-cairo" data-en="Project Manager" data-ar="مدير المشاريع">Project Manager</p>
+                    <p class="text-gray-600 text-sm font-cairo leading-relaxed" data-en="Specialized in agile project management and client relations. Ensures seamless project delivery and client satisfaction." data-ar="متخصص في إدارة المشاريع الرشيقة وعلاقات العملاء. يضمن تسليم المشاريع بسلاسة ورضا العملاء.">Specialized in agile project management and client relations. Ensures seamless project delivery and client satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-cairo" data-en="Our Values" data-ar="قيمنا">Our Values</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto font-cairo leading-relaxed" data-en="The fundamental principles that guide everything we do and shape our company culture" data-ar="المبادئ الأساسية التي توجه كل ما نقوم به وتشكل ثقافة شركتنا">The fundamental principles that guide everything we do and shape our company culture</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="value-card text-center fade-in">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-star text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Excellence" data-ar="التميز">Excellence</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="We strive for excellence in every project and interaction, delivering solutions that exceed expectations." data-ar="نسعى للتميز في كل مشروع وتفاعل، نقدم حلولاً تتجاوز التوقعات.">We strive for excellence in every project and interaction, delivering solutions that exceed expectations.</p>
+                </div>
+                
+                <div class="value-card text-center fade-in">
+                    <div class="w-20 h-20 bg-gradient-to-br from-secondary to-primary text-black rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-handshake text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Integrity" data-ar="النزاهة">Integrity</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Honesty and transparency in all our business dealings, building trust with every interaction." data-ar="الصدق والشفافية في جميع تعاملاتنا التجارية، بناء الثقة مع كل تفاعل.">Honesty and transparency in all our business dealings, building trust with every interaction.</p>
+                </div>
+                
+                <div class="value-card text-center fade-in">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-lightbulb text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Innovation" data-ar="الابتكار">Innovation</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Continuously exploring new technologies and solutions to stay ahead of industry trends." data-ar="استكشاف مستمر للتقنيات والحلول الجديدة للبقاء في المقدمة في اتجاهات الصناعة.">Continuously exploring new technologies and solutions to stay ahead of industry trends.</p>
+                </div>
+                
+                <div class="value-card text-center fade-in">
+                    <div class="w-20 h-20 bg-gradient-to-br from-secondary to-primary text-black rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-users text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Collaboration" data-ar="التعاون">Collaboration</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Working together with clients and team members to achieve shared success and lasting partnerships." data-ar="العمل معاً مع العملاء وأعضاء الفريق لتحقيق النجاح المشترك والشراكات الدائمة.">Working together with clients and team members to achieve shared success and lasting partnerships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-primary via-accent to-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 font-cairo" data-en="Ready to Work With Us?" data-ar="مستعد للعمل معنا؟">Ready to Work With Us?</h2>
+                <p class="text-xl mb-12 text-gray-300 font-cairo max-w-3xl mx-auto" data-en="Join the hundreds of satisfied clients who have transformed their businesses with our innovative solutions" data-ar="انضم إلى مئات العملاء الراضين الذين حولوا أعمالهم بحلولنا المبتكرة">Join the hundreds of satisfied clients who have transformed their businesses with our innovative solutions</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="contact.html" class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 font-cairo" data-en="Start Your Project" data-ar="ابدأ مشروعك">Start Your Project</a>
+                    <a href="portfolio.html" class="border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 font-cairo" data-en="View Our Work" data-ar="اطلع على أعمالنا">View Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 to-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <a href="index.html">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse mb-6" style="    background: #80808030;
+    border-radius: 20px;">
+                            <!-- <img src="mishkat.png" alt="لوجو مشكاة" class="w-10 h-10 rounded filter invert" />
+                             -->
+                            <p style="font-size: 24px; margin: 7px;  border-radius: 20%; background-color: #00FF00; color: black; font-weight: 700; width: 55px; text-align: center; padding: 10px;">م</p>
+                            <div>
+                                <h1 class="text-lg font-bold text-white font-cairo">mishkat</h1>
+                                <h2 class="text-sm text-gray-400 font-cairo">مِشْكَاة</h2>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 font-cairo text-lg leading-relaxed" data-en="Your trusted partner for innovative software solutions and digital transformation." data-ar="شريكك الموثوق في حلول البرمجيات المبتكرة والتحول الرقمي.">Your trusted partner for innovative software solutions and digital transformation.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-cairo" data-en="Services" data-ar="الخدمات">Services</h3>
+                    <ul class="space-y-3 text-gray-400 font-cairo">
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="ERP Systems" data-ar="أنظمة تخطيط الموارد">ERP Systems</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Odoo Services" data-ar="خدمات أودو">Odoo Services</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Web Development" data-ar="تطوير الويب">Web Development</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-lg" data-en="Mobile Apps" data-ar="تطبيقات الجوال">Mobile Apps</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-cairo" data-en="Company" data-ar="الشركة">Company</h3>
+                    <ul class="space-y-3 text-gray-400 font-cairo">
+                        <li><a href="about.html" class="hover:text-white transition-colors text-lg" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-colors text-lg" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors text-lg" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                        <li><a href="careers.html" class="hover:text-white transition-colors text-lg" data-en="Careers" data-ar="الوظائف">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-cairo" data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h3>
+                    <div class="space-y-3 text-gray-400 font-cairo">
+                        <p class="text-lg">+1 (555) 123-4567</p>
+                        <p class="text-lg">info@mishkat.com</p>
+                        <p class="text-lg" data-en="123 Business Street, Tech City" data-ar="123 شارع الأعمال، مدينة التكنولوجيا">123 Business Street, Tech City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p class="text-lg font-cairo" data-en="© 2024 Mishkat. All rights reserved." data-ar="© 2024 مشكاة. جميع الحقوق محفوظة.">© 2024 Mishkat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="Assets/language.js"></script>
+</body>
+</html>

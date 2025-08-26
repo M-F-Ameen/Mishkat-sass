@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الوظائف - مشكاة | Careers - Mishkat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#00FF00',
+                        accent: '#333333'
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="Assets/nav.css" rel="stylesheet">
+    <link href="Assets/darkTheme.css" rel="stylesheet">
+    <style>
+        .job-card {
+            transition: all 0.3s ease;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 255, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+        }
+        
+        .process-step {
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation Header -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <span class="logo-text">م</span>
+                        </div>
+                        <div class="logo-text-container">
+                            <span class="logo-title" data-en="mishkat" data-ar="مشكاة">mishkat</span>
+                            <span class="logo-subtitle" data-en="Software Solutions" data-ar="حلول البرمجيات">Software Solutions</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation Menu -->
+                <div class="desktop-nav">
+                    <div class="nav-menu">
+                        <a href="index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                        <a href="about.html" class="nav-link" data-en="About Us" data-ar="من نحن">About Us</a>
+                        <a href="services.html" class="nav-link" data-en="Services" data-ar="الخدمات">Services</a>
+                        <a href="portfolio.html" class="nav-link" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+                        <a href="career.html" class="nav-link active" data-en="Careers" data-ar="الوظائف">Careers</a>
+                        <a href="contact.html" class="nav-link" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                    </div>
+                </div>
+                
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button id="langToggle" class="lang-toggle">
+                        <div class="lang-toggle-content">
+                            <i class="fas fa-globe lang-icon"></i>
+                            <span id="currentLang" data-en="عربي" data-ar="English">عربي</span>
+                        </div>
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="mobile-menu-btn">
+                    <i class="fas fa-bars mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="index.html" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="about.html" class="mobile-nav-link" data-en="About Us" data-ar="من نحن">About Us</a>
+                <a href="services.html" class="mobile-nav-link" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="portfolio.html" class="mobile-nav-link" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+                <a href="career.html" class="mobile-nav-link active" data-en="Careers" data-ar="الوظائف">Careers</a>
+                <a href="contact.html" class="mobile-nav-link" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-20 bg-gradient-to-br from-primary via-accent to-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #00FF00 0%, transparent 50%), radial-gradient(circle at 75% 75%, #00FF00 0%, transparent 50%);"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
+            <div class="text-center fade-in">
+                <h1 class="text-5xl md:text-6xl font-black mb-6 font-cairo" data-en="Join Our Team" data-ar="انضم إلى فريقنا">Join Our Team</h1>
+                <p class="text-xl md:text-2xl text-gray-300 font-cairo max-w-4xl mx-auto" data-en="Build your career with innovative software solutions and be part of our success story" data-ar="ابن مسيرتك المهنية مع حلول البرمجيات المبتكرة وكن جزءاً من قصة نجاحنا">Build your career with innovative software solutions and be part of our success story</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Us -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-cairo" data-en="Why Choose Mishkat?" data-ar="لماذا تختار مشكاة؟">Why Choose Mishkat?</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto font-cairo leading-relaxed" data-en="Discover what makes Mishkat an exceptional place to build your career and achieve your professional goals" data-ar="اكتشف ما يجعل مشكاة مكاناً استثنائياً لبناء مسيرتك المهنية وتحقيق أهدافك المهنية">Discover what makes Mishkat an exceptional place to build your career and achieve your professional goals</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="text-center fade-in">
+                    <div class="benefit-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-xl">
+                        <i class="fas fa-rocket text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Innovation Focus" data-ar="التركيز على الابتكار">Innovation Focus</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Work with cutting-edge technologies and contribute to innovative solutions that shape the future of business" data-ar="اعمل مع أحدث التقنيات وساهم في الحلول المبتكرة التي تشكل مستقبل الأعمال">Work with cutting-edge technologies and contribute to innovative solutions that shape the future of business</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="benefit-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-xl">
+                        <i class="fas fa-users text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Amazing Team" data-ar="فريق رائع">Amazing Team</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Join a collaborative team of passionate professionals who support each other and celebrate success together" data-ar="انضم إلى فريق تعاوني من المحترفين المتحمسين الذين يدعمون بعضهم البعض ويحتفلون بالنجاح معاً">Join a collaborative team of passionate professionals who support each other and celebrate success together</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="benefit-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-xl">
+                        <i class="fas fa-chart-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Career Growth" data-ar="النمو المهني">Career Growth</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Continuous learning opportunities, skill development programs, and clear career advancement paths" data-ar="فرص التعلم المستمر وبرامج تطوير المهارات ومسارات واضحة للتقدم المهني">Continuous learning opportunities, skill development programs, and clear career advancement paths</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="benefit-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-xl">
+                        <i class="fas fa-balance-scale text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Work-Life Balance" data-ar="التوازن بين العمل والحياة">Work-Life Balance</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Flexible working arrangements, remote work options, and a healthy work environment that values your well-being" data-ar="ترتيبات عمل مرنة وخيارات العمل عن بُعد وبيئة عمل صحية تقدر رفاهيتك">Flexible working arrangements, remote work options, and a healthy work environment that values your well-being</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="benefit-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-xl">
+                        <i class="fas fa-gift text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Great Benefits" data-ar="مزايا رائعة">Great Benefits</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Competitive salary, comprehensive health insurance, retirement plans, and additional perks" data-ar="راتب تنافسي وتأمين صحي شامل وخطط تقاعد ومزايا إضافية">Competitive salary, comprehensive health insurance, retirement plans, and additional perks</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="benefit-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-xl">
+                        <i class="fas fa-globe text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Global Impact" data-ar="تأثير عالمي">Global Impact</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Work on projects that make a real difference worldwide and contribute to digital transformation" data-ar="اعمل على مشاريع تحدث فرقاً حقيقياً في جميع أنحاء العالم وساهم في التحول الرقمي">Work on projects that make a real difference worldwide and contribute to digital transformation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-cairo" data-en="Open Positions" data-ar="الوظائف المتاحة">Open Positions</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto font-cairo leading-relaxed" data-en="Find your next opportunity with us and join our growing team of talented professionals" data-ar="اعثر على فرصتك التالية معنا وانضم إلى فريقنا المتنامي من المحترفين الموهوبين">Find your next opportunity with us and join our growing team of talented professionals</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Job 1 -->
+                <div class="job-card bg-white rounded-2xl shadow-xl p-8 fade-in border-l-4 border-secondary">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900 mr-4 rtl:mr-0 rtl:ml-4 font-cairo" data-en="Senior Full Stack Developer" data-ar="مطور ويب كامل أول">Senior Full Stack Developer</h3>
+                                <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Full Time" data-ar="دوام كامل">Full Time</span>
+                            </div>
+                            <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="We're looking for an experienced full stack developer to join our development team and work on exciting web applications and ERP systems. You'll be responsible for both front-end and back-end development using modern technologies." data-ar="نبحث عن مطور ويب كامل ذو خبرة للانضمام إلى فريق التطوير والعمل على تطبيقات الويب المثيرة وأنظمة تخطيط الموارد. ستكون مسؤولاً عن تطوير الواجهة الأمامية والخلفية باستخدام التقنيات الحديثة.">We're looking for an experienced full stack developer to join our development team and work on exciting web applications and ERP systems. You'll be responsible for both front-end and back-end development using modern technologies.</p>
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">React</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Node.js</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Python</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">PostgreSQL</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-sm font-cairo">
+                                <i class="fas fa-map-marker-alt mr-2 rtl:mr-0 rtl:ml-2"></i>
+                                <span data-en="Tech City, Remote Available" data-ar="مدينة التكنولوجيا، العمل عن بُعد متاح">Tech City, Remote Available</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 lg:mt-0 lg:ml-8 rtl:lg:ml-0 rtl:lg:mr-8">
+                            <button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-secondary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-cairo" data-en="Apply Now" data-ar="تقدم الآن">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job-card bg-white rounded-2xl shadow-xl p-8 fade-in border-l-4 border-primary">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900 mr-4 rtl:mr-0 rtl:ml-4 font-cairo" data-en="Odoo Developer" data-ar="مطور أودو">Odoo Developer</h3>
+                                <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Full Time" data-ar="دوام كامل">Full Time</span>
+                            </div>
+                            <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Join our Odoo team to implement and customize ERP solutions for our clients. Experience with Odoo framework is preferred. You'll work on complex business logic and create custom modules." data-ar="انضم إلى فريق أودو لتنفيذ وتخصيص حلول تخطيط الموارد لعملائنا. الخبرة مع إطار عمل أودو مفضلة. ستعمل على منطق الأعمال المعقد وإنشاء وحدات مخصصة.">Join our Odoo team to implement and customize ERP solutions for our clients. Experience with Odoo framework is preferred. You'll work on complex business logic and create custom modules.</p>
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Odoo</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Python</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">XML</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">JavaScript</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-sm font-cairo">
+                                <i class="fas fa-map-marker-alt mr-2 rtl:mr-0 rtl:ml-2"></i>
+                                <span data-en="Tech City, Hybrid" data-ar="مدينة التكنولوجيا، مختلط">Tech City, Hybrid</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 lg:mt-0 lg:ml-8 rtl:lg:ml-0 rtl:lg:mr-8">
+                            <button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-secondary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-cairo" data-en="Apply Now" data-ar="تقدم الآن">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job-card bg-white rounded-2xl shadow-xl p-8 fade-in border-l-4 border-secondary">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900 mr-4 rtl:mr-0 rtl:ml-4 font-cairo" data-en="Mobile App Developer" data-ar="مطور تطبيقات الجوال">Mobile App Developer</h3>
+                                <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Full Time" data-ar="دوام كامل">Full Time</span>
+                            </div>
+                            <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Develop cross-platform mobile applications using React Native or Flutter. Experience with native iOS/Android development is a plus. You'll create high-performance apps with excellent user experience." data-ar="طور تطبيقات الجوال متعددة المنصات باستخدام React Native أو Flutter. الخبرة في تطوير iOS/Android الأصلي ميزة إضافية. ستنشئ تطبيقات عالية الأداء مع تجربة مستخدم ممتازة.">Develop cross-platform mobile applications using React Native or Flutter. Experience with native iOS/Android development is a plus. You'll create high-performance apps with excellent user experience.</p>
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">React Native</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Flutter</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">iOS</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Android</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-sm font-cairo">
+                                <i class="fas fa-map-marker-alt mr-2 rtl:mr-0 rtl:ml-2"></i>
+                                <span data-en="Tech City, Remote Available" data-ar="مدينة التكنولوجيا، العمل عن بُعد متاح">Tech City, Remote Available</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 lg:mt-0 lg:ml-8 rtl:lg:ml-0 rtl:lg:mr-8">
+                            <button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-secondary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-cairo" data-en="Apply Now" data-ar="تقدم الآن">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="job-card bg-white rounded-2xl shadow-xl p-8 fade-in border-l-4 border-primary">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900 mr-4 rtl:mr-0 rtl:ml-4 font-cairo" data-en="UI/UX Designer" data-ar="مصمم واجهة المستخدم">UI/UX Designer</h3>
+                                <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Full Time" data-ar="دوام كامل">Full Time</span>
+                            </div>
+                            <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Create intuitive and engaging user interfaces for web and mobile applications. Work closely with development teams to bring designs to life and ensure excellent user experience across all platforms." data-ar="أنشئ واجهات مستخدم بديهية وجذابة لتطبيقات الويب والجوال. اعمل بشكل وثيق مع فرق التطوير لإحياء التصاميم وضمان تجربة مستخدم ممتازة عبر جميع المنصات.">Create intuitive and engaging user interfaces for web and mobile applications. Work closely with development teams to bring designs to life and ensure excellent user experience across all platforms.</p>
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Figma</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Adobe XD</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Sketch</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Prototyping</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-sm font-cairo">
+                                <i class="fas fa-map-marker-alt mr-2 rtl:mr-0 rtl:ml-2"></i>
+                                <span data-en="Tech City, Hybrid" data-ar="مدينة التكنولوجيا، مختلط">Tech City, Hybrid</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 lg:mt-0 lg:ml-8 rtl:lg:ml-0 rtl:lg:mr-8">
+                            <button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-secondary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-cairo" data-en="Apply Now" data-ar="تقدم الآن">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="job-card bg-white rounded-2xl shadow-xl p-8 fade-in border-l-4 border-secondary">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900 mr-4 rtl:mr-0 rtl:ml-4 font-cairo" data-en="Project Manager" data-ar="مدير مشاريع">Project Manager</h3>
+                                <span class="bg-secondary text-black px-4 py-2 rounded-full text-sm font-bold font-cairo" data-en="Full Time" data-ar="دوام كامل">Full Time</span>
+                            </div>
+                            <p class="text-gray-600 mb-6 font-cairo leading-relaxed" data-en="Lead software development projects from conception to delivery. Coordinate with clients and internal teams to ensure successful project outcomes and maintain high quality standards throughout the development process." data-ar="قد مشاريع تطوير البرمجيات من التصور إلى التسليم. نسق مع العملاء والفرق الداخلية لضمان نتائج مشاريع ناجحة والحفاظ على معايير الجودة العالية طوال عملية التطوير.">Lead software development projects from conception to delivery. Coordinate with clients and internal teams to ensure successful project outcomes and maintain high quality standards throughout the development process.</p>
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Agile</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Scrum</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Jira</span>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-cairo">Leadership</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-sm font-cairo">
+                                <i class="fas fa-map-marker-alt mr-2 rtl:mr-0 rtl:ml-2"></i>
+                                <span data-en="Tech City, On-site" data-ar="مدينة التكنولوجيا، في المكتب">Tech City, On-site</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 lg:mt-0 lg:ml-8 rtl:lg:ml-0 rtl:lg:mr-8">
+                            <button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-secondary hover:text-black transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-cairo" data-en="Apply Now" data-ar="تقدم الآن">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-cairo" data-en="Application Process" data-ar="عملية التقديم">Application Process</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto font-cairo leading-relaxed" data-en="How to join our team in 4 simple steps and become part of our innovative journey" data-ar="كيفية الانضمام إلى فريقنا في 4 خطوات بسيطة وتصبح جزءاً من رحلتنا المبتكرة">How to join our team in 4 simple steps and become part of our innovative journey</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="text-center fade-in process-step">
+                    <div class="bg-gradient-to-br from-primary to-accent text-white w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-xl">1</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Apply Online" data-ar="تقدم أونلاين">Apply Online</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Submit your application and resume through our online portal with all required documents" data-ar="قدم طلبك وسيرتك الذاتية من خلال بوابتنا الإلكترونية مع جميع الوثائق المطلوبة">Submit your application and resume through our online portal with all required documents</p>
+                </div>
+                
+                <div class="text-center fade-in process-step">
+                    <div class="bg-gradient-to-br from-secondary to-primary text-black w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-xl">2</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Initial Review" data-ar="المراجعة الأولية">Initial Review</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Our HR team will review your application and contact you within 48 hours with next steps" data-ar="سيراجع فريق الموارد البشرية طلبك ويتواصل معك خلال 48 ساعة مع الخطوات التالية">Our HR team will review your application and contact you within 48 hours with next steps</p>
+                </div>
+                
+                <div class="text-center fade-in process-step">
+                    <div class="bg-gradient-to-br from-primary to-accent text-white w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-xl">3</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Interview Process" data-ar="عملية المقابلة">Interview Process</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Technical and cultural fit interviews with our team members and leadership" data-ar="مقابلات تقنية وثقافية مع أعضاء فريقنا والقيادة">Technical and cultural fit interviews with our team members and leadership</p>
+                </div>
+                
+                <div class="text-center fade-in process-step">
+                    <div class="bg-gradient-to-br from-secondary to-primary text-black w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-xl">4</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Welcome Aboard" data-ar="مرحباً بك">Welcome Aboard</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Join our team and start your journey with comprehensive onboarding and mentorship" data-ar="انضم إلى فريقنا وابدأ رحلتك مع تأهيل شامل وإرشاد">Join our team and start your journey with comprehensive onboarding and mentorship</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employee Benefits -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-cairo" data-en="Employee Benefits" data-ar="مزايا الموظفين">Employee Benefits</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto font-cairo leading-relaxed" data-en="We care about our team's well-being and success with comprehensive benefits package" data-ar="نهتم برفاهية ونجاح فريقنا مع حزمة مزايا شاملة">We care about our team's well-being and success with comprehensive benefits package</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-2xl shadow-xl fade-in border-t-4 border-secondary">
+                    <div class="text-secondary text-4xl mb-6">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Health Insurance" data-ar="التأمين الصحي">Health Insurance</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Comprehensive health coverage for you and your family including dental and vision care" data-ar="تغطية صحية شاملة لك ولعائلتك تشمل رعاية الأسنان والعيون">Comprehensive health coverage for you and your family including dental and vision care</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-xl fade-in border-t-4 border-primary">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Learning & Development" data-ar="التعلم والتطوير">Learning & Development</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Annual training budget, conference attendance, and professional certification support" data-ar="ميزانية تدريب سنوية وحضور المؤتمرات ودعم الشهادات المهنية">Annual training budget, conference attendance, and professional certification support</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-xl fade-in border-t-4 border-secondary">
+                    <div class="text-secondary text-4xl mb-6">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Flexible Work" data-ar="العمل المرن">Flexible Work</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Remote work options, flexible hours, and hybrid work arrangements" data-ar="خيارات العمل عن بُعد وساعات مرنة وترتيبات عمل مختلطة">Remote work options, flexible hours, and hybrid work arrangements</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-xl fade-in border-t-4 border-primary">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Paid Time Off" data-ar="إجازة مدفوعة">Paid Time Off</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Generous vacation days, sick leave policy, and personal time off" data-ar="أيام إجازة سخية وسياسة إجازة مرضية ووقت شخصي">Generous vacation days, sick leave policy, and personal time off</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-xl fade-in border-t-4 border-secondary">
+                    <div class="text-secondary text-4xl mb-6">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Retirement Plan" data-ar="خطة التقاعد">Retirement Plan</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Company-matched retirement savings plan and financial planning assistance" data-ar="خطة ادخار تقاعد بمطابقة الشركة ومساعدة التخطيط المالي">Company-matched retirement savings plan and financial planning assistance</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-xl fade-in border-t-4 border-primary">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-cairo" data-en="Fun Activities" data-ar="أنشطة ممتعة">Fun Activities</h3>
+                    <p class="text-gray-600 font-cairo leading-relaxed" data-en="Team building events, recreational activities, and company social gatherings" data-ar="فعاليات بناء الفريق والأنشطة الترفيهية والتجمعات الاجتماعية للشركة">Team building events, recreational activities, and company social gatherings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-primary via-accent to-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 font-cairo" data-en="Ready to Join Our Team?" data-ar="مستعد للانضمام إلى فريقنا؟">Ready to Join Our Team?</h2>
+                <p class="text-xl mb-12 text-gray-300 font-cairo max-w-3xl mx-auto" data-en="Don't see a position that fits? Send us your resume anyway! We're always looking for talented individuals to join our growing team." data-ar="لا ترى منصباً مناسباً؟ أرسل لنا سيرتك الذاتية على أي حال! نحن نبحث دائماً عن أفراد موهوبين للانضمام إلى فريقنا المتنامي.">Don't see a position that fits? Send us your resume anyway! We're always looking for talented individuals to join our growing team.</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="mailto:careers@mishkat.com" class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 font-cairo" data-en="Send Resume" data-ar="أرسل السيرة الذاتية">Send Resume</a>
+                    <a href="contact.html" class="border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 font-cairo" data-en="Contact HR" data-ar="اتصل بالموارد البشرية">Contact HR</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 to-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <a href="index.html">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse mb-6" style="    background: #80808030;
+    border-radius: 20px;">
+                            <!-- <img src="mishkat.png" alt="لوجو مشكاة" class="w-10 h-10 rounded filter invert" />
+                             -->
+                            <p style="font-size: 24px; margin: 7px;  border-radius: 20%; background-color: #00FF00; color: black; font-weight: 700; width: 55px; text-align: center; padding: 10px;">م</p>
+                            <div>
+                                <h1 class="text-lg font-bold text-white font-cairo">mishkat</h1>
+                                <h2 class="text-sm text-gray-400 font-cairo">مِشْكَاة</h2>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="footer-description text-gray-400 font-cairo text-lg leading-relaxed" data-en="Your trusted partner for innovative software solutions and digital transformation." data-ar="شريكك الموثوق في حلول البرمجيات المبتكرة والتحول الرقمي.">Your trusted partner for innovative software solutions and digital transformation.</p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title text-xl font-bold mb-6 font-cairo" data-en="Services" data-ar="الخدمات">Services</h3>
+                    <ul class="space-y-3 text-gray-400 font-cairo">
+                        <li><a href="services.html" class="footer-link hover:text-white transition-colors text-lg" data-en="ERP Systems" data-ar="أنظمة تخطيط الموارد">ERP Systems</a></li>
+                        <li><a href="services.html" class="footer-link hover:text-white transition-colors text-lg" data-en="Odoo Services" data-ar="خدمات أودو">Odoo Services</a></li>
+                        <li><a href="services.html" class="footer-link hover:text-white transition-colors text-lg" data-en="Web Development" data-ar="تطوير الويب">Web Development</a></li>
+                        <li><a href="services.html" class="footer-link hover:text-white transition-colors text-lg" data-en="Mobile Apps" data-ar="تطبيقات الجوال">Mobile Apps</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title text-xl font-bold mb-6 font-cairo" data-en="Company" data-ar="الشركة">Company</h3>
+                    <ul class="space-y-3 text-gray-400 font-cairo">
+                        <li><a href="about.html" class="footer-link hover:text-white transition-colors text-lg" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                        <li><a href="portfolio.html" class="footer-link hover:text-white transition-colors text-lg" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a></li>
+                        <li><a href="contact.html" class="footer-link hover:text-white transition-colors text-lg" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                        <li><a href="careers.html" class="footer-link hover:text-white transition-colors text-lg" data-en="Careers" data-ar="الوظائف">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title text-xl font-bold mb-6 font-cairo" data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h3>
+                    <div class="space-y-3 text-gray-400 font-cairo">
+                        <p class="text-lg">+1 (555) 123-4567</p>
+                        <p class="text-lg">careers@mishkat.com</p>
+                        <p class="footer-address text-lg" data-en="123 Business Street, Tech City" data-ar="123 شارع الأعمال، مدينة التكنولوجيا">123 Business Street, Tech City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p class="copyright text-lg font-cairo" data-en="© 2024 Mishkat. All rights reserved." data-ar="© 2024 مشكاة. جميع الحقوق محفوظة.">© 2024 Mishkat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="Assets/language.js"></script>
+</body>
+</html>
